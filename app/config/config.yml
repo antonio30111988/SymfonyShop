@@ -37,6 +37,13 @@ framework:
 twig:
     debug: '%kernel.debug%'
     strict_variables: '%kernel.debug%'
+    globals:
+    category_menu: '@category_menu'
+    customer_menu: '@customer_menu'
+    checkout_menu: '@checkout_menu'
+    products_bestsellers: '@bestsellers'
+    products_onsale: '@onsale'
+
 
 # Doctrine Configuration
 doctrine:

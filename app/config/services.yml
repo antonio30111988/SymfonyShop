@@ -33,3 +33,15 @@ services:
     # AppBundle\Service\ExampleService:
     #     arguments:
     #         $someArgument: 'some_value'
+    
+
+    category_menu: 
+     class: AppBundle\Service\Menu\Category
+    customer_menu:
+     class: AppBundle\Service\Menu\Customer
+    checkout_menu:
+     class: AppBundle\Service\Menu\Checkout
+    bestsellers:
+     class: AppBundle\Service\Menu\BestSellers
+    onsale:
+     class: AppBundle\Service\Menu\OnSale
