@@ -1,11 +1,29 @@
 # To get started with security, check out the documentation:
 # https://symfony.com/doc/current/security.html
 security:
+    encoders:
+        Symfony\Component\Security\Core\User\User:
+            algorithm: bcrypt
+            cost: 12 
+            
+    access_control:
+        # protect any possible auto-generated CRUD actions from
+        #everyone's access
+        - { path: /new, roles: ROLE_ADMIN }
+        - { path: /edit, roles: ROLE_ADMIN }
+        - { path: /, roles: ROLE_ADMIN, methods: [DELETE] } 
 
     # https://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
     providers:
         in_memory:
-            memory: ~
+            memory: 
+                 users:
+                    antonio:
+                        password: $2y$12$/jUQF44PqkvEMwN4qwY9hu1EzdDFoQr5kOnsKAP7hMWzKHZ9.kBs
+                        roles: 'ROLE_USER'
+                    admin:
+                        password: $2y$12$S1m2P8V4NwRbDpdgJyfunuSQyWOxda6BgysOhnS7x3.Ih9NWjA9M
+                        roles: 'ROLE_ADMIN' 
 
     firewalls:
         # disables authentication for assets and the profiler, adapt it according to your needs
@@ -22,3 +40,14 @@ security:
 
             # https://symfony.com/doc/current/security/form_login_setup.html
             #form_login: ~
+        
+        guard_new_edit:
+            pattern: /(new)|(edit)
+            methods: [GET, POST]
+            anonymous: ~
+            http_basic: ~
+        guard_delete:
+            pattern: /
+            methods: [DELETE]
+            anonymous: ~
+            http_basic: ~
