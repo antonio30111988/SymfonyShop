@@ -4,6 +4,17 @@ parameters:
     #parameter_name: value
 
 services:
+    category_menu: 
+        class: AppBundle\Service\Menu\Category
+    customer_menu:
+        class: AppBundle\Service\Menu\Customer
+    checkout_menu:
+        class: AppBundle\Service\Menu\Checkout
+    bestsellers:
+        class: AppBundle\Service\Menu\BestSellers
+    onsale:
+        class: AppBundle\Service\Menu\OnSale
+        
     # default configuration for services in *this* file
     _defaults:
         # automatically injects dependencies in your services
@@ -35,13 +46,4 @@ services:
     #         $someArgument: 'some_value'
     
 
-    category_menu: 
-     class: AppBundle\Service\Menu\Category
-    customer_menu:
-     class: AppBundle\Service\Menu\Customer
-    checkout_menu:
-     class: AppBundle\Service\Menu\Checkout
-    bestsellers:
-     class: AppBundle\Service\Menu\BestSellers
-    onsale:
-     class: AppBundle\Service\Menu\OnSale
+    
