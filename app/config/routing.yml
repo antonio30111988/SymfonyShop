@@ -1,3 +1,7 @@
+symfony_shop_catlalog_category:
+    resource: "@SymfonyShopCatlalogBundle/Controller/CategoryController.php"
+    type:     annotation
+
 symfony_shop_catlalog:
     resource: "@SymfonyShopCatlalogBundle/Resources/config/routing.xml"
     prefix:   /catalog
