@@ -4,7 +4,8 @@ namespace AppBundle\Service\Menu;
 
 class Category {
 	
-	public function getItems() {
+	public function getItems() 
+	{
 		return array(
 			array(
 				'path' =>'women',

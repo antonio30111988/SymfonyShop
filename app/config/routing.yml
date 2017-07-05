@@ -1,3 +1,7 @@
+symfony_shop_catlalog:
+    resource: "@SymfonyShopCatlalogBundle/Resources/config/routing.xml"
+    prefix:   /
+
 app:
     resource: '@AppBundle/Controller/'
     type: annotation

@@ -9,6 +9,7 @@ parameters:
     locale: en
 
 framework:
+    # metadata_update_threshold: 120
     #esi: ~
     #translator: { fallbacks: ['%locale%'] }
     secret: '%secret%'
