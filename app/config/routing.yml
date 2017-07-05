@@ -1,7 +1,3 @@
-symfony_shop_catlalog_category:
-    resource: "@SymfonyShopCatlalogBundle/Controller/CategoryController.php"
-    type:     annotation
-
 symfony_shop_catlalog:
     resource: "@SymfonyShopCatlalogBundle/Resources/config/routing.xml"
     prefix:   /catalog
@@ -9,3 +5,11 @@ symfony_shop_catlalog:
 app:
     resource: '@AppBundle/Controller/'
     type: annotation
+
+symfonyshop_catalog_category:
+    resource: '@SymfonyShopCatalogBundle/Controller/CategoryController'
+    type: annotation  
+
+symfonyshop_catalog_product:
+    resource: '@SymfonyShopCatalogBundle/Controller/ProductController'
+    type: annotation   
