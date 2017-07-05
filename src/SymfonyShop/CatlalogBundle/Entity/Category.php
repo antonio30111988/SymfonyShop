@@ -13,6 +13,28 @@ use Doctrine\ORM\Mapping as ORM;
 class Category
 {
     /**
+    * @ORM\OneToMany(targetEntity="Product", mappedBy="category")
+    */
+    private $products;
+    
+    /**
+     * Category conatructor
+     */
+    public function __construct()
+    {
+        $this->products = new \Doctrine\Common\Collections\ArrayCollection();
+    } 
+
+    /**
+     * Print string title value
+     * @return string Field title
+     */
+    public function __toString()
+    {
+        return $this->getTitle();
+    }
+
+    /**
      * @var int
      *
      * @ORM\Column(name="id", type="integer")
