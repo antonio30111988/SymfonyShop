@@ -64,10 +64,9 @@ class Product
     private $qty;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="category", type="string", length=255)
-     */
+    * @ORM\ManyToOne(targetEntity="Category", inversedBy="products")
+    * @ORM\JoinColumn(name="category_id", referencedColumnName="id")
+    */
     private $category;
 
     /**

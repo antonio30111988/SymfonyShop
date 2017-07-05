@@ -16,7 +16,7 @@ class Category
     * @ORM\OneToMany(targetEntity="Product", mappedBy="category")
     */
     private $products;
-    
+     
     /**
      * Category conatructor
      */
